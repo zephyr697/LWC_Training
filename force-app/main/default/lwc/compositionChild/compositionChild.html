@@ -1,0 +1,16 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Contact List" icon-name="standard:contact">
+        <div  class="slds-grid slds-grid_vertical slds-box">
+            <template for:each={contacts} for:item="contact">
+                <div key={contact.Id} class="slds-col">
+                    <div class="slds-box slds-grid slds-grid_align-spread slds-gutters">
+                        <span class="slds-col slds-size_2-of-3">{contact.Name}</span>
+                        <lightning-button  class="slds-col slds-col slds-size_1-of-3" value={contact.Id} variant="brand" label="View Contact" title="Primary action" onclick={handleClick}>
+                        </lightning-button>
+                    </div>
+                  </div>
+            </template>
+          </div>
+    </lightning-card>
+    
+</template>

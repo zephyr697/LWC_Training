@@ -1,0 +1,8 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Parent" icon-name="custom:custom12">
+        <div class="slds-box" >
+            <p class="slds-align_absolute-center">{pageNumber}</p>
+            <c-event-l-w-c-child onnext={nextHandler} onprev={prevHandler} class="slds-align_absolute-center" ></c-event-l-w-c-child>
+        </div>
+    </lightning-card>   
+</template>

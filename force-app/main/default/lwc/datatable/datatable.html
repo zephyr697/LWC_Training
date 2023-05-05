@@ -1,0 +1,17 @@
+<template>
+  <lightning-card
+    variant="Narrow"
+    title="Account List"
+    icon-name="standard:account"
+  >
+    <lightning-datatable
+      key-field="id"
+      data={accts}
+      show-row-number-column
+      hide-checkbox-column
+      columns={columnsList}
+      onrowaction={handleRowAction}
+    >
+    </lightning-datatable>
+  </lightning-card>
+</template>

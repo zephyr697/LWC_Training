@@ -1,0 +1,12 @@
+.green{
+    background-color: rgb(136, 233, 136);
+}
+.green:hover{
+    background-color: rgb(92, 207, 92);
+}
+.red{
+    background-color: rgb(237, 151, 151);
+}
+.red:hover{
+    background-color: rgb(241, 124, 124);
+}

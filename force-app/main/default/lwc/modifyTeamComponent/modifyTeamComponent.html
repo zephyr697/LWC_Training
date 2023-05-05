@@ -1,0 +1,110 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Create your team">
+        <template lwc:if={showButton}>
+            <lightning-button label="Proceed" icon-name="utility:chevronright" variant="brand" slot="actions" onclick={handleProceed}></lightning-button>
+        </template>
+        <p>Number of teams that can be created with available players : {numTeams}</p>
+
+        <lightning-tabset>
+            <template lwc:if={showTabOne}>
+                <lightning-tab label="Select players">
+                    <lightning-layout multiple-rows>
+                        <lightning-layout-item size="9" padding="around-small">
+                            <template lwc:if={players}>
+                                <lightning-datatable
+                                    data-type="players"
+                                    key-field="Id"
+                                    data={players}
+                                    columns={columns}
+                                    max-row-selection="15"
+                                    >
+                                </lightning-datatable>
+                            </template>
+                            <template lwc:if={error}>
+                                {error}
+                            </template>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="3" padding="around-small">
+                            <div class="slds-box slds-p-around_medium slds-text-align_center"><h3>Rules</h3></div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </lightning-tab>
+            </template>
+            <template lwc:if={showTabTwo}>
+                <lightning-tab label="Choose a Captain">
+                    <lightning-layout multiple-rows>
+                        <lightning-layout-item size="9" padding="around-small">
+                            <template lwc:if={selectedPlayers}>
+                                <lightning-datatable
+                                    data-type="captain"
+                                    key-field="Id"
+                                    data={selectedPlayers}
+                                    columns={columns}
+                                    max-row-selection="1"
+                                    >
+                                </lightning-datatable>
+                            </template>
+                            <template lwc:if={error}>
+                                {error}
+                            </template>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="3" padding="around-small">
+                            <div class="slds-box slds-p-around_medium slds-text-align_center"><h3>Select a captain for your team</h3></div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </lightning-tab>
+            </template>
+            <template lwc:if={showTabThree}>
+                <lightning-tab label="Choose a Vice Captain">
+                    <lightning-layout multiple-rows>
+                        <lightning-layout-item size="9" padding="around-small">
+                            <template lwc:if={selectedCaptain}>
+                                <lightning-datatable
+                                    data-type="vicecaptain"
+                                    key-field="Id"
+                                    data={selectedCaptain}
+                                    columns={columns}
+                                    max-row-selection="1"
+                                    >
+                                </lightning-datatable>
+                            </template>
+                            <template lwc:if={error}>
+                                {error}
+                            </template>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="3" padding="around-small">
+                            <div class="slds-box slds-p-around_medium slds-text-align_center"><h3>Select a vice captain for your team</h3></div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </lightning-tab>
+            </template>
+            <template lwc:if={showTabFour}>
+                <lightning-tab label="Your Final Team">
+                    <lightning-layout multiple-rows>
+                        <lightning-layout-item size="9" padding="around-small">
+                            <template lwc:if={finalTeam}>
+                                <lightning-datatable
+                                    data-type="finalTeam"
+                                    key-field="Id"
+                                    data={finalTeam}
+                                    columns={finalListCols}
+                                    
+                                    >
+                                </lightning-datatable>
+                            </template>
+                            <template lwc:if={error}>
+                                {error}
+                            </template>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="3" padding="around-small">
+                            <div class="slds-box slds-p-around_medium slds-text-align_center"><h3>Here is your team.</h3></div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </lightning-tab>
+            </template>
+            
+        </lightning-tabset>
+        
+        
+    </lightning-card>
+</template>

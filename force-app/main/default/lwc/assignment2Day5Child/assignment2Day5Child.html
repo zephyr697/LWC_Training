@@ -1,0 +1,53 @@
+<template>
+    
+    <lightning-card data-type="Account" class="slds-hide" title="Account List" icon-name="custom:custom14">
+        <div class="slds-var-m-around_medium">
+            <template lwc:if={accts.data}>
+                <ul class="slds-var-m-around_medium">
+                    <template for:each={accts.data} for:item="acct">
+                        <li key={acct.Id}>
+                            <p>{acct.Name}</p>
+                        </li>
+                    </template>
+                </ul>
+            </template>
+            <template lwc:elseif={accts.error}>
+                {accts.error}
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card data-type="Opty" class="slds-hide" title="Opty List" icon-name="custom:custom14">
+        <div class="slds-var-m-around_medium">
+            <template lwc:if={opties.data}>
+                <ul class="slds-var-m-around_medium">
+                    <template for:each={opties.data} for:item="opty">
+                        <li key={opty.Id}>
+                            <p>{opty.Name}</p>
+                        </li>
+                    </template>
+                </ul>
+            </template>
+            <template lwc:elseif={opties.error}>
+                {opties.error}
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card data-type="Lead" class="slds-hide" title="Lead List" icon-name="custom:custom14">
+        <div class="slds-var-m-around_medium">
+            <template lwc:if={leads.data}>
+                <ul class="slds-var-m-around_medium">
+                    <template for:each={leads.data} for:item="lead">
+                        <li key={lead.Id}>
+                            <p>{lead.Name}</p>
+                        </li>
+                    </template>
+                </ul>
+            </template>
+            <template lwc:elseif={leads.error}>
+                {leads.error}
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,22 @@
+<template>
+    <lightning-card   title="Teams List" icon-name="standard:account">
+        <lightning-button label="Create New Team" variant="brand" slot="actions" onclick={handleCreateTeam}></lightning-button>
+
+            <div class="slds-var-m-around_medium">
+            <template lwc:if={teams.data}>
+                <ul class="slds-var-m-around_medium">
+                    <template for:each={teams.data} for:item="team">
+                        <li class="slds-box slds-grid slds-grid_align-spread slds-gutters" key={team.Id}>
+                            <span class="slds-col slds-size_2-of-3">{team.Team_Name__c}</span>
+                            <lightning-button class="slds-col slds-col slds-size_1-of-3" value={team.Id} label="Modify" slot="actions" onclick={handleModifyTeam}></lightning-button>
+                        </li>
+                    </template>
+                </ul>
+            </template>
+            <template lwc:elseif={teams.error}>
+                {teams.error}
+            </template>
+        </div>
+
+    </lightning-card>
+</template>

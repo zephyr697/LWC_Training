@@ -1,0 +1,12 @@
+<template>
+    <lightning-card>
+        
+        <div class="slds-var-m-around_medium">
+            <template lwc:if={isChecked}>
+            <lightning-icon icon-name="utility:success" variant="success"
+                title="success variant x-small" size="x-small"></lightning-icon>
+            </template>
+            <a><lightning-badge label="Check the box" onclick={handleClick}></lightning-badge></a>
+        </div>    
+    </lightning-card>
+</template>

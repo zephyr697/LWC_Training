@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Conditional Rendering" icon-name="custom:custom14">
+        <div class="slds-var-m-around_medium">
+            <template lwc:if={contacts}>
+                <ul class="slds-var-m-around_medium">
+                    <template for:each={contacts} for:item="cont">
+                        <li key={cont.contact.Id} if:true={cont.isValid}>
+                            <p>{cont.contact.Name}</p>
+                        </li>
+                    </template>
+                </ul>
+            </template>
+        </div>
+    </lightning-card>
+</template>

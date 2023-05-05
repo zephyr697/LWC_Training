@@ -1,0 +1,108 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Event Registration Form" icon-name="utility:event"> 
+        <div class="slds-form">
+            <lightning-layout multiple-rows>
+
+                
+
+                <lightning-layout-item size="6" padding="around-small"  >
+                    <div class="custom-box"><div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label" for="horizontal-input-id-01">First Name</label>
+                        <div class="slds-form-element__control">
+                            <lightning-input required id="horizontal-input-id-01" type="text" variant="standard" name="firstname" placeholder="First Name" max-length="20" min-length="4"></lightning-input>
+                        </div>
+                    </div></div>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="6" padding="around-small" >
+                    <div class="custom-box"><div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label" for="horizontal-input-id-02">Last Name</label>
+                        <div class="slds-form-element__control">
+                            <lightning-input required id="horizontal-input-id-02" type="text" variant="standard" name="lastname" placeholder="Last Name" max-length="20" min-length="4"></lightning-input>
+                        </div>
+                    </div></div>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="6" padding="around-small" >
+                    <div class="custom-box"><div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label" for="horizontal-input-id-03">Date of Birth</label>
+                        <div class="slds-form-element__control">
+                            <lightning-input id="horizontal-input-id-03" type="date" variant="standard" name="dob" placeholder="Select a date" max="2005-01-01" min="1990-01-01"></lightning-input>
+                        </div>
+                    </div></div>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="6" padding="around-small" >
+                    <div class="custom-box"><div class="slds-form-element slds-form-element_horizontal">
+                <label class="slds-form-element__label" for="horizontal-input-id-09">Gender</label>
+                <div class="slds-form-element__control">
+                    <lightning-combobox id="horizontal-input-id-09"
+                            name="gender"
+                            value={value}
+                            placeholder="Select Gender"
+                            options={options}
+                            onchange={handlePicklistValueChange}>
+                    </lightning-combobox>
+                </div>
+            </div></div>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="6" padding="around-small" >
+                    <div class="custom-box"><div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label" for="horizontal-input-id-04">Contact</label>
+                        <div class="slds-form-element__control">
+                            <lightning-input id="horizontal-input-id-04" type="tel" variant="standard" name="mob" placeholder="+91-4444-44444" pattern="^\+91-\d{4}-\d{5}$"></lightning-input>
+                        </div>
+                    </div></div>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="6" padding="around-small" >
+                    <div class="custom-box"><div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label" for="horizontal-input-id-05">Entry Time</label>
+                        <div class="slds-form-element__control">
+                            <lightning-input id="horizontal-input-id-05" type="time" variant="standard" name="time" placeholder="Between 6PM-8PM" min="18:00:00.000" max="20:00:00.000"></lightning-input>
+                        </div>
+                    </div></div>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="6" padding="around-small" >
+                    <div class="custom-box"><div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label" for="horizontal-input-id-06">Color</label>
+                        <div class="slds-form-element__control">
+                            <lightning-input id="horizontal-input-id-06" type="color" variant="standard" name="color" placeholder="Pick a color"></lightning-input>
+                        </div>
+                    </div></div>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="6" padding="around-small" >
+                    <div class="custom-box"><div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label" for="horizontal-input-id-07">Email</label>
+                        <div class="slds-form-element__control">
+                            <lightning-input id="horizontal-input-id-07" type="email" variant="standard" name="email" placeholder="Enter emails of attendees" multiple required></lightning-input>
+                        </div>
+                    </div></div>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="6" padding="around-small" >
+                    <div class="custom-box"><div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label" for="horizontal-input-id-08">Number of Attendees</label>
+                        <div class="slds-form-element__control">
+                            <lightning-input id="horizontal-input-id-08" type="number" variant="standard" name="numberOfAttendees" placeholder="Pick a number between 1-5" min="1" max="5"></lightning-input>
+                        </div>
+                    </div></div>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="12" padding="around-small" >
+                    <div class="custom-box"><div class="slds-form-element slds-form-element_horizontal" >
+                        <lightning-button class="slds-align_absolute-center" variant="brand" label="Submit" title="Submit" onclick={handleSubmit}></lightning-button>
+                    </div></div>
+                </lightning-layout-item>
+            </lightning-layout>
+  
+        </div>
+        <div slot="footer">
+    
+            <p>Copyright Globant</p>
+        </div>
+    </lightning-card>
+</template>

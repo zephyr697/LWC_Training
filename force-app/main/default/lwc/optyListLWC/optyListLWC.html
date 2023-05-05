@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Opportunity List" icon-name="custom:custom20">
+        <template lwc:if={opties}>
+            <ul class="slds-var-m-around_medium">
+                <template for:each={opties} for:item="opty">
+                    <div class="slds-box slds-grid slds-grid_align-spread slds-gutters" key={opty.Id}>
+                        <span class="slds-col slds-size_2-of-3">{opty.Name}</span>
+                        <span data-type="amt" class="slds-col slds-size_1-of-3">{opty.Amount}</span>
+                    </div>
+                </template>
+            </ul>
+        </template>
+    </lightning-card>
+</template>
